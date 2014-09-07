@@ -1,0 +1,2 @@
+Exercise 1:
+1 OR gate, 1 NOT gate, 2 AND gates are needed. 4 total gates needed.
