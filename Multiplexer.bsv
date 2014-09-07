@@ -31,7 +31,7 @@ endfunction
 
 //typedef 32 N; // Not needed
 function Bit#(n) multiplexer_n(Bit#(1) sel, Bit#(n) a, Bit#(n) b);
-    Bit#(n) aggregate;
+    Bit#(n) aggregate = 0;
     for(Integer i = 0; i < valueOf(n); i = i + 1) begin
         aggregate[i] = multiplexer1(sel, a[i], b[i]);
     end
