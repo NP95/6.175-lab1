@@ -13,7 +13,12 @@ endfunction
 // 4 Bit full adder
 
 function Bit#(5) add4( Bit#(4) a, Bit#(4) b, Bit#(1) c_in );
-    return 0;
+    Bit#(4) s; Bit#(5) c = 0; c[0] = c_in;
+    for(Integer i = 0; i < 4; i = i + 1) begin
+        s[i] = fa_sum(a[i], b[i], c[i]);
+        c[i+1] = fa_carry(a[i], b[i], c[i]);
+    end
+    return { c[4], s };
 endfunction
 
 // Adder interface
